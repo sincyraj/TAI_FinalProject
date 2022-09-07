@@ -8,7 +8,7 @@ from sklearn.model_selection import cross_val_score
 import matplotlib.pyplot as plt
 from sklearn.metrics import precision_recall_fscore_support
 
-input_data = pd.read_csv("data/processed.hungarian.data", header=None)
+input_data = pd.read_csv("data/processed.cleveland.data", header=None)
 input_data.columns = ["age", "sex", "cp", "trestbps", "chol", "fbs", "restecg", "thalach", "exang", "oldpeak", "slope", "ca", "thal", "num"]
 input_data.head()
 results = input_data.groupby(['age']).size()

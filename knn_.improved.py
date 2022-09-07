@@ -76,11 +76,11 @@ plt.xlabel('True +ve rate')
 plt.ylabel('False +ve rate')
 plt.show()
 
-leaf_size = list(range(1,20))
+
 n_neighbors = list(range(1,20))
 p=[1,2] # Manhattan or Euclidean distance
 # Hyper parameters to be tuned
-hyperparameters = dict(leaf_size=leaf_size, n_neighbors=n_neighbors, p=p)
+hyperparameters = dict(n_neighbors=n_neighbors, p=p)
 
 #Create new KNN object
 knn_tuned = KNeighborsClassifier()
@@ -90,6 +90,6 @@ clf = GridSearchCV(knn_tuned, hyperparameters, cv=10)
 #Fit the model
 best_model = clf.fit(x,y)
 #Print The value of best Hyperparameters
-print('Best leaf_size:', best_model.best_estimator_.get_params()['leaf_size'])
+
 print('Best p:', best_model.best_estimator_.get_params()['p'])
 print('Best n_neighbors:', best_model.best_estimator_.get_params()['n_neighbors'])
